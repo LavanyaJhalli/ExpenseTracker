@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Track Expenses</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+    <div class="container">
+        <h2>All Expenses</h2>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Amount</th>
+                <th>Category</th>
+            </tr>
+            <tr th:each="expense : ${expenses}">
+                <td th:text="${expense.title}"></td>
+                <td th:text="${expense.amount}"></td>
+                <td th:text="${expense.category}"></td>
+            </tr>
+        </table>
+        <a href="/"><button>Back to Home</button></a>
+    </div>
+</body>
+</html>
